@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.width-30 {
+  width: 30%;
+}
+.user-name {
+  padding-top: 10px;
+  padding-right: 25px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #bf80ff;
+}
+.site-name {
+  font-size: 30px;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 10px;
+  color: #bf80ff;
+}
+.login-register-labels {
+  font-weight: 500;
+  font-size: 20px;
+  float: left;
+  margin-left: 13px;
+  color: #bf80ff;
+}
+.button-width {
+  width: 100%;
+}
+.login-register-header {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size: 50px;
+  font-weight: 700;
+  color: #bf80ff;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: #8064a2 !important;
+}
+
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:visited {
+  background-color: #8064a2 !important;
+}
+.btn-danger:hover {
+  transform: scale(1.1, 1.1);
+}
+.delete-button {
+  padding-top: 10px;
+  padding-right: 40px;
+}
+.width-100 {
+  width: 100%;
+}
+.width-40 {
+  width: 40%;
+}
+.medicine-elements-headers {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: #bf80ff;
+}
+.medicine-elements {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #9900cc;
+}
+.opis {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #9900cc;
+}
+.add-view-medicine {
+  font-size: 20px;
+}
+.main-page-info {
+  padding-top: 40px;
+}
+.main-page-text-header {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 600;
+  color: #9900cc;
+}
+.main-page-text {
+  text-align: justify;
+  font-size: 25px;
+  font-weight: 400;
+  color: #9900cc;
+  padding-top: 30px;
+}

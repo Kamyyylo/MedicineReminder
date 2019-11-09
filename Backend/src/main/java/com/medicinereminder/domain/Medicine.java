@@ -1,7 +1,10 @@
 package com.medicinereminder.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 
@@ -10,19 +13,19 @@ public class Medicine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "Name of the medicine is required")
+    @NotBlank(message = "Nazwa leku jest wymagana")
     private String medicineName;
-    //@NotBlank(message = "Put expiration date of your medicine")
+    @NotNull(message = "Podanie daty przydatności do spożycia jest wymagane")
+    @JsonFormat(pattern = "yyyy-mm-dd")
     private Date expirationDate;
-    @NotBlank(message = "At least one time when medicine will be taken is required")
+    @NotBlank(message = "Wymagane jest podanie przynajmniej jednej daty przyjmowania leku")
     private String timeOfTaking_1;
     private String timeOfTaking_2;
     private String timeOfTaking_3;
-    @NotBlank(message = "Put a short description of this medicine")
     private String medicineDescription;
-    @NotBlank(message = "Dosage is required")
+    @NotBlank(message = "Dawkowanie leku jest wymagane")
     private String dosage;
-    private Long userId;
+    private String userName;
 
     public Medicine() {
     }
@@ -91,11 +94,11 @@ public class Medicine {
         this.dosage = dosage;
     }
 
-    public Long getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

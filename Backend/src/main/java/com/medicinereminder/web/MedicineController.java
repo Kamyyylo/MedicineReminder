@@ -33,15 +33,15 @@ public class MedicineController {
         return new ResponseEntity<>(medicine1, HttpStatus.CREATED);
     }
 
-    @GetMapping("{userId}/{medicineId}")
-    public ResponseEntity<?> getMedicineByUserId(@PathVariable String userId, @PathVariable String medicineId){
-        Medicine medicine = medicineService.findByMedicineId(Long.parseLong(userId), Long.parseLong(medicineId));
+    @GetMapping("{userName}/{medicineId}")
+    public ResponseEntity<?> getMedicineByUserId(@PathVariable String userName, @PathVariable String medicineId){
+        Medicine medicine = medicineService.findByMedicineId(userName, Long.parseLong(medicineId));
         return new ResponseEntity<Medicine>(medicine,HttpStatus.OK);
     }
 
-    @GetMapping("{userId}")
-    public ArrayList<Medicine> getAllMedicineForUser(@PathVariable String userId){
-       return medicineService.findAllMedicineForUser(Long.parseLong(userId));
+    @GetMapping("{userName}")
+    public ArrayList<Medicine> getAllMedicineForUser(@PathVariable String userName){
+       return medicineService.findAllMedicineForUser(userName);
     }
 
     @DeleteMapping("{medicineId}")

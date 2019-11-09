@@ -24,10 +24,13 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User findUserByLogin(String login){
+    public User findUser(String login, String password){
         User user = userRepository.findByLogin(login);
         if(user == null){
             throw new UserExistsException("User does not exist");
+        }
+        if(!user.getPassword().equals(password)){
+            throw new UserExistsException("Password is wrong");
         }
         return user;
     }

@@ -10,11 +10,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "login cannot be empty")
-    @Size(min=6, message = "Put min 6 characters")
+    @NotBlank(message = "Nazwa użytkownika nie może być pusta")
+    @Size(min=6, message = "Login musi posiadać minimum 6 znaków")
     private String login;
-    @NotBlank(message = "password is required")
-    @Size(min=8, message = "Put min 8 characters")
+    @NotBlank(message = "Hasło nie może być puste")
+    @Size(min=8, message = "Hasło musi posiadać minimum 8 znaków")
     private String password;
 
     public User() {

@@ -32,9 +32,9 @@ public class UserController {
 
     }
 
-    @GetMapping("{login}")
-    public ResponseEntity<?> getUserByLogin(@PathVariable String login){
-        User user = userService.findUserByLogin(login);
+    @GetMapping("{login}/{password}")
+    public ResponseEntity<?> getUserByLogin(@PathVariable String login, @PathVariable String password){
+        User user = userService.findUser(login,password);
         return new ResponseEntity<User>(user ,HttpStatus.OK);
     }
 

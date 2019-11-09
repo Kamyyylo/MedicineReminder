@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MedicineRepository extends CrudRepository<Medicine, Long> {
 
-   Medicine findByUserId(Long userId);
+   Medicine findByUserName(String username);
 
     Medicine findById(long id);
 

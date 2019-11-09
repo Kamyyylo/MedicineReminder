@@ -19,11 +19,11 @@ public class MedicineService {
         return medicineRepository.save(medicine);
     }
 
-    public Medicine findByMedicineId(Long userId, Long medicineId){
+    public Medicine findByMedicineId(String userName, Long medicineId){
         Iterable<Medicine> medicineList = medicineRepository.findAll();
         Medicine medicine1 = new Medicine();
         for(Medicine medicine : medicineList){
-            if(medicine.getUserId() == userId && medicine.getId()==medicineId){
+            if(medicine.getUserName() == userName && medicine.getId()==medicineId){
                 medicine1 = medicine;
             }
         }
@@ -33,11 +33,11 @@ public class MedicineService {
         return medicine1;
     }
 
-    public ArrayList<Medicine> findAllMedicineForUser(Long userId){
+    public ArrayList<Medicine> findAllMedicineForUser(String userName){
         Iterable<Medicine> medicineList = medicineRepository.findAll();
         ArrayList<Medicine> medicineForUser = new ArrayList<>();
         for(Medicine medicine : medicineList){
-            if(medicine.getUserId() == userId){
+            if(medicine.getUserName().equals(userName)){
                 medicineForUser.add(medicine);
             }
         }
