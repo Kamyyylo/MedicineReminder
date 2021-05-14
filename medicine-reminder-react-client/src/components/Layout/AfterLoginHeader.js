@@ -6,7 +6,7 @@ export default class AfterLoginHeader extends Component {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <p className=" site-name">Weź-lek.pl</p>
+          <p className=" site-name">Zażyj-pigułę.pl</p>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">

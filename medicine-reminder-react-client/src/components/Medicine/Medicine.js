@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { deleteMedicine } from "../../actions/MedicineActions";
+import { Link } from "react-router-dom";
 
 class Medicine extends Component {
   onDeleteButtonClick(id) {
@@ -69,6 +70,19 @@ class Medicine extends Component {
               </td>
               <td className="opis ">{medicine.medicineDescription}</td>
               <td>
+              <Link to={{
+                pathname: `/medicines/edit/${medicine.id}`,
+                query: {
+                  comments: JSON.stringify(medicine)
+                }
+                }}>
+                <button
+                type="button"
+                className="btn btn-danger delete-button float-right"
+                >
+                Edytuj
+              </button>
+              </Link>
                 <button
                   type="button"
                   className="btn btn-danger delete-button float-right"

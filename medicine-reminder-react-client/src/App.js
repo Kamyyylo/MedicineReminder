@@ -11,6 +11,7 @@ import MedicineList from "./components/Medicine/MedicineList";
 import AfterLoginHeader from "./components/Layout/AfterLoginHeader";
 import AddMedicine from "./components/Medicine/AddMedicine";
 import MainPageInfo from "./components/MainPageInfo";
+import EditMedicine from "./components/Medicine/EditMedicine";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/addMedicine/:username" component={AddMedicine} />
           <Route exact path="/medicines/:username" component={MedicineList} />
+          <Route exact path="/medicines/edit/:id" component={EditMedicine} />
         </div>
       </Router>
     </Provider>
