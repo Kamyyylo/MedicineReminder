@@ -12,7 +12,11 @@ export const createMedicine = (
       type: GET_ERRORS,
       payload: {}
     });
-    window.alert("Lek poprawnie dodany do listy leków");
+    if(typeof medicine.id !== "undefined") {
+      window.alert("Lek został poprawnie zaktualizowany");
+    } else {
+      window.alert("Lek poprawnie dodany do listy leków");
+    }
     history.push(`/medicines/${username}`);
   } catch (err) {
     dispatch({
