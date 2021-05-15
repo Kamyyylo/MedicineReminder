@@ -13,6 +13,8 @@ public class User {
     @NotBlank(message = "Nazwa użytkownika nie może być pusta")
     @Size(min=6, message = "Login musi posiadać minimum 6 znaków")
     private String login;
+    @NotBlank(message = "Mail nie może być pusty")
+    private String mail;
     @NotBlank(message = "Hasło nie może być puste")
     @Size(min=8, message = "Hasło musi posiadać minimum 8 znaków")
     private String password;
@@ -34,6 +36,14 @@ public class User {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public String getPassword() {

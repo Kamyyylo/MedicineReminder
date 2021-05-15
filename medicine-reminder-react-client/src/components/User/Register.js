@@ -9,6 +9,7 @@ class Register extends Component {
     super();
     this.state = {
       login: "",
+      mail: "",
       password: "",
       errors: {}
     };
@@ -27,6 +28,7 @@ class Register extends Component {
     e.preventDefault();
     const newUser = {
       login: this.state.login,
+      mail: this.state.mail,
       password: this.state.password
     };
     this.props.createUser(newUser, this.props.history);
@@ -52,6 +54,22 @@ class Register extends Component {
             />
             {errors.login && (
               <div className="invalid-feedback text-right">{errors.login}</div>
+            )}
+          </div>
+          <div className="form-group">
+            <label className="login-register-labels">Mail</label>
+            <input
+              type="text"
+              className={classnames("form-control form-control-lg", {
+                "is-invalid": errors.mail
+              })}
+              placeholder="Mail"
+              name="mail"
+              value={this.state.mail}
+              onChange={this.onChange}
+            />
+            {errors.mail && (
+              <div className="invalid-feedback text-right">{errors.mail}</div>
             )}
           </div>
           <div className="form-group">
