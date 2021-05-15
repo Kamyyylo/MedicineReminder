@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-export default class EditMedicine extends Component {
+import { createMedicine } from "../../actions/MedicineActions";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+class EditMedicine extends Component {
     medicineObject;
 
     constructor() {
@@ -20,7 +23,6 @@ export default class EditMedicine extends Component {
       }
     onSubmit(e) {
         e.preventDefault();
-        debugger;
         const newMedicine = {
             id: this.state.id,
             medicineName: this.state.medicineName,
@@ -28,14 +30,14 @@ export default class EditMedicine extends Component {
             timeOfTaking_1: this.state.timeOfTaking_1,
             timeOfTaking_2: this.state.timeOfTaking_2,
             timeOfTaking_3: this.state.timeOfTaking_3,
+            dosage: this.state.dosage,
             medicineDescription: this.state.medicineDescription,
             dosage: this.state.dosage,
-            userName: this.props.match.params.username
+            userName: this.state.userName
           };
-          debugger;
-        this.props.createMedicine(
-          this.medicineObject,
-          this.props.match.params.username,
+          this.props.createMedicine(
+          newMedicine,
+          this.state.userName,
           this.props.history
         );
       }
@@ -51,13 +53,13 @@ export default class EditMedicine extends Component {
             this.state.medicineName = this.medicineObject.medicineName;
             this.state.expirationDate = this.medicineObject.expirationDate;
             this.state.medicineDescription = this.medicineObject.medicineDescription;
+            this.state.dosage = this.medicineObject.dosage;
             this.state.timeOfTaking_1 = this.medicineObject.timeOfTaking_1;
             this.state.timeOfTaking_2 = this.medicineObject.timeOfTaking_2;
             this.state.timeOfTaking_3 = this.medicineObject.timeOfTaking_3;
             this.state.userName = this.medicineObject.userName;
-            debugger;
         }
-        debugger;
+        
         return (
             <div className="container">
         <form onSubmit={this.onSubmit}>
@@ -149,3 +151,16 @@ export default class EditMedicine extends Component {
         )
     }
 }
+EditMedicine.propTypes = {
+    createMedicine: PropTypes.func.isRequired
+  };
+  
+  const mapStateToProps = state => ({
+    
+  });
+  
+  export default connect(
+    mapStateToProps,
+    { createMedicine }
+  )(EditMedicine);
+  
